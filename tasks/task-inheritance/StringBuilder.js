@@ -1,6 +1,7 @@
 const Builder = require('./Builder')
 
 class StringBuilder extends Builder {
+  // eslint-disable-next-line no-useless-constructor
   constructor(value) {
     super(value)
   }
@@ -19,7 +20,7 @@ class StringBuilder extends Builder {
     let resultSTR = this.value
     while (n - 1 > 0) {
       resultSTR += `${this.value}`
-      n--
+      n -= 1
     }
     this.value = resultSTR
     console.log(`Multiply ${this.value}`)

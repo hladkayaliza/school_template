@@ -7,7 +7,7 @@ function IntBuilder(value) {
 IntBuilder.prototype = Object.create(Builder.prototype)
 IntBuilder.prototype.constructor = IntBuilder
 
-IntBuilder.random = function(from, to) {
+IntBuilder.random = function (from, to) {
   const randomValue = Math.random() * (from - to) + to
   return Math.round(randomValue)
 }
