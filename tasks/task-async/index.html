@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+</head>
+<body>
+<div>
+    <section class="align location">
+        <form class="location-form" id = "location-form">
+            <input id = "city" class="location-form__item location-input" type="text" name="city" placeholder="Enter your city here">
+            <input class="location-form__item location-input" type="text" name="country" placeholder="Enter your country here">
+            <button class="location-form__item btn" type="submit">Submit</button>
+
+        </form>
+    </section>
+    <section >
+        <div class="weather-container">
+        </div>
+
+    </section>
+
+</div>
+
+
+<template id="weather">
+    <div class="weather-item">
+        <div class="main-data">
+            <img class="weather-img" src="#" />
+            <span class="grad"></span>
+            <span class="location"></span>
+        </div>
+        <div class="additional-data">
+            <div class="additional-data__row">
+                <div class="time">1</div>
+                <div class="like"></div>
+                <div class="state"></div>
+            </div>
+            <div class="additional-data__row">
+                <div class="wind"></div>
+                <div class="speed"></div>
+                <div class="pressure"></div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script type="module" src="assets/scripts/index.js">
+</script>
+</body>
+</html>
