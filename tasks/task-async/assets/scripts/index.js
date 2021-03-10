@@ -23,10 +23,14 @@ const parseJson = function (result) {
 const getWeatherData = async function (city, country) {
   const url = `${URL}&query=${city},${country}`
   const response = await fetch(url)
-  return response
+  const checkedResponse = checkStatus(response)
+  if (checkedResponse) {
+    return parseJson(checkedResponse)
+  }
+  return null
 }
 
-const renderWeatherData = function (data) {
+const renderWeatherData = function (data){
 
   const weatherNode = WEATHER_TEMPLATE.content.querySelector('.weather-item')
   const weather = weatherNode.cloneNode(true)
@@ -44,10 +48,8 @@ const renderWeatherData = function (data) {
 
 async function GetWeather(city, country) {
   try {
-    await getWeatherData(city, country)
-      .then((response) => checkStatus(response))
-      .then((result) => parseJson(result))
-      .then((data) => renderWeatherData(data))
+    const data = await getWeatherData(city, country)
+    renderWeatherData(data)
   } catch (error) {
     console.log(error)
   }
