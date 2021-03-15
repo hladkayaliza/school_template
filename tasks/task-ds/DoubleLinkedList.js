@@ -12,30 +12,25 @@ class DoubleLinkedList {
     this.tail = null
   }
 
-  head() {
+  getHead() {
     return this.head
   }
 
-  tail() {
+  getTail() {
     return this.tail
   }
 
   traverse(order = true) {
     const array = []
-    if (order) {
-      let currentNode = this.head
-      while (currentNode !== null) {
-        array.push(currentNode)
-        currentNode = currentNode.next
-      }
-      return array
-    }
-    let currentNode = this.tail
+    let currentNode = this.head
     while (currentNode !== null) {
       array.push(currentNode)
-      currentNode = currentNode.previous
+      currentNode = currentNode.next
     }
-    return array
+    if (order) {
+      return array
+    }
+    return array.reverse()
   }
 
   add(value) {
@@ -127,6 +122,8 @@ class DoubleLinkedList {
 
 const dll = new DoubleLinkedList()
 
+dll.getHead()
+dll.getTail()
 dll.add('two').add('one').add('three').add('four')
 dll.traverse() // two -> one -> three -> four
 dll.traverse(true) // two -> one -> three -> four
@@ -139,3 +136,4 @@ dll.delete('one').delete('three')
 dll.traverse() // two -> ten -> four
 dll.isExist('ten') // true
 dll.isExist('one') // false
+
