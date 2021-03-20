@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  border: solid 1px #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("./assets/images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  padding: 36px 180px;
+
+}
+
+.align {
+  align-self: center;
+}
+
+
+
