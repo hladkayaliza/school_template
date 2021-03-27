@@ -21,6 +21,7 @@ const parseJson = function (result) {
 }
 
 const getWeatherData = async function (city, country) {
+try {
   const url = `${URL}&query=${city},${country}`
   const response = await fetch(url)
   const checkedResponse = checkStatus(response)
@@ -28,6 +29,9 @@ const getWeatherData = async function (city, country) {
     return parseJson(checkedResponse)
   }
   return null
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 const renderWeatherData = function (data){
