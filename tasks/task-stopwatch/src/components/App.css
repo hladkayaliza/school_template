@@ -1,0 +1,12 @@
+body {
+  height: 100vh;
+  border: solid 1px transparent;
+  background-image: url("bg.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
