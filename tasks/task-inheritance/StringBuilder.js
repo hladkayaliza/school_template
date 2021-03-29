@@ -27,12 +27,13 @@ class StringBuilder extends Builder {
     if (this.value.includes(str)) {
       const substring = Array.from(str)
       this.value = Array.from(this.value).reduce((acc, item) => {
+        let currAcc = acc
         if (item === substring[0]) {
           substring.slice(0, 1)
         } else {
-          acc += item
+          currAcc += item
         }
-        return acc
+        return currAcc
       }, [])
     }
     return this

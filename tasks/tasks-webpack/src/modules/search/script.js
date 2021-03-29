@@ -1,6 +1,7 @@
 import './style.css'
 
 export function renderSearch(parentElement, onCallSearch) {
+  const parentContainer = parentElement
   const searchBlock = `<div>
       <section class="align location">
       <form class="location-form" id="location-form">
@@ -15,7 +16,7 @@ export function renderSearch(parentElement, onCallSearch) {
     </div>
   </div>`
 
-  parentElement.innerHTML = searchBlock
+  parentContainer.innerHTML = searchBlock
   const form = document.getElementById('location-form')
   form.addEventListener('submit', (event) => onCallSearch(event))
 }

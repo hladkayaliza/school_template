@@ -35,6 +35,7 @@ async function getWeather(params) {
     return data
   } catch (error) {
     console.log(error)
+    return null
   }
 }
 

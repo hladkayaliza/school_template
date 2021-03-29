@@ -68,6 +68,7 @@ class LinkedList {
       }
       return currentNode
     }
+    return null
   }
 
   traverse() {

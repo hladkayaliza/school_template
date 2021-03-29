@@ -1,6 +1,8 @@
 import './style.css'
 
 export function renderWeather(parentElement, data) {
+  const parentContainer = parentElement
+
   if (data) {
     const weatherBlock = `<div class="weather-item">
                           <div class="main-data">
@@ -21,8 +23,8 @@ export function renderWeather(parentElement, data) {
                             </div>
                           </div>
                         </div>`
-    parentElement[0].innerHTML = weatherBlock
+    parentContainer[0].innerHTML = weatherBlock
   } else {
-    parentElement[0].innerHTML = 'Sorry, check entered data!'
+    parentContainer[0].innerHTML = 'Sorry, check entered data!'
   }
 }
