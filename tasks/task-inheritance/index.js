@@ -20,4 +20,3 @@ strBuilder
   .remove('l')
   .sub(1, 1)
   .get()
-getCounter
