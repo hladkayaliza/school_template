@@ -41,6 +41,3 @@ queue1.dequeue()
 console.log(queue1.isFull())
 console.log(queue1.isEmpty())
 console.log(queue1.peek())
-
-
-
