@@ -28,10 +28,9 @@ const getWeatherData = async function (city, country) {
     if (checkedResponse) {
       return parseJson(checkedResponse)
     }
-    return null
   } catch (error) {
-    console.log(error)
- }
+      console.log(error)
+    }
 }
 
 const renderWeatherData = function (data) {
