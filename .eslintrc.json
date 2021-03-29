@@ -25,6 +25,7 @@
             "object": true
         }, {
             "enforceForRenamedProperties": false
-        }]
+        }],
+        "func-names": ["off"]
     }
 }
