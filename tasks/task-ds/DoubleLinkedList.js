@@ -54,7 +54,6 @@ class DoubleLinkedList {
     let currentNode = this.head
     while (currentNode.data !== targetNode.data) {
       if (!currentNode.next) {
-        alert('Node is not exist in list')
         return null
       }
       currentNode = currentNode.next
@@ -72,7 +71,6 @@ class DoubleLinkedList {
     let currentNode = this.head
     while (currentNode.data !== parentNode.data) {
       if (!currentNode.next) {
-        alert('Target node is not exist in list')
         return null
       }
       currentNode = currentNode.next
@@ -86,16 +84,14 @@ class DoubleLinkedList {
 
   delete(value) {
     if (!this.head) {
-      alert('List is empty')
       return null
     }
     const targetNode = new Node(value)
     let currentNode = this.head
     while (currentNode.data !== targetNode.data) {
-      if (!currentNode.next) {
-        alert('Target node is not exist in list')
+      if (currentNode.next) {
+        currentNode = currentNode.next
       }
-      currentNode = currentNode.next
     }
     const prevNode = currentNode.previous
     const nextNode = currentNode.next
@@ -105,18 +101,18 @@ class DoubleLinkedList {
   }
 
   isExist(value) {
-    if (!this.head) {
-      alert('List is empty')
-    }
-    const targetNode = new Node(value)
-    let currentNode = this.head
-    while (currentNode.data !== targetNode.data) {
-      if (!currentNode.next) {
-        return false
+    if (this.head) {
+      const targetNode = new Node(value)
+      let currentNode = this.head
+      while (currentNode.data !== targetNode.data) {
+        if (!currentNode.next) {
+          return false
+        }
+        currentNode = currentNode.next
       }
-      currentNode = currentNode.next
+      return true
     }
-    return true
+    return false
   }
 }
 

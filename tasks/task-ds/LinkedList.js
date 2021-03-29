@@ -25,24 +25,22 @@ class LinkedList {
   }
 
   delete(nodeForDelete) {
-    if (this.head === null) {
-      alert('Linked list is empty')
-    }
-    let previousNode = this.head
-    let currentNode = this.head.next
-    if (previousNode.data === nodeForDelete.data) {
-      this.head = null
-      return
-    }
-    while (currentNode.data !== nodeForDelete.data) {
-      if (!currentNode.next) {
-        alert('Node is not exist in list')
+    if (this.head !== null) {
+      let previousNode = this.head
+      let currentNode = this.head.next
+      if (previousNode.data === nodeForDelete.data) {
+        this.head = null
         return
       }
-      previousNode = currentNode
-      currentNode = currentNode.next
+      while (currentNode.data !== nodeForDelete.data) {
+        if (!currentNode.next) {
+          return
+        }
+        previousNode = currentNode
+        currentNode = currentNode.next
+      }
+      previousNode.next = currentNode.next
     }
-    previousNode.next = currentNode.next
   }
 
   addAfter(afterNodeValue, data) {
@@ -60,18 +58,17 @@ class LinkedList {
   }
 
   isExist(targetNode) {
-    if (this.head === null) {
-      alert('Linked list is empty')
-    }
-    let currentNode = this.head
-    while (currentNode.data !== targetNode.data) {
-      if (!currentNode.next) {
-        alert('Node is not exist in list')
-        return null
+    if (this.head !== null) {
+      let currentNode = this.head
+      while (currentNode.data !== targetNode.data) {
+        if (!currentNode.next) {
+          return null
+        }
+        currentNode = currentNode.next
       }
-      currentNode = currentNode.next
+      return currentNode
     }
-    return currentNode
+    return null
   }
 
   traverse() {
@@ -99,6 +96,6 @@ list.delete(nodeForDelete2)
 
 const k = new Node('Katya')
 const l = new Node('Liza')
-console.log(list.isExist(k))
-console.log(list.isExist(l))
-console.log(list.traverse())
+list.isExist(k)
+list.isExist(l)
+list.traverse()
