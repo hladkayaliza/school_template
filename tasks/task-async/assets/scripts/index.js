@@ -30,6 +30,7 @@ const getWeatherData = async function (city, country) {
     }
   } catch (error) {
       console.log(error)
+      return null
     }
 }
 
