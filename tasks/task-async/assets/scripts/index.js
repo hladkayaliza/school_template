@@ -30,24 +30,33 @@ const getWeatherData = async function (city, country) {
     }
     return null
   } catch (error) {
-      console.log(error)
-      return null
-    }
+    console.log(error)
+    return null
+  }
 }
 
 const renderWeatherData = function (data) {
   const weatherNode = WEATHER_TEMPLATE.content.querySelector('.weather-item')
   const weather = weatherNode.cloneNode(true)
-  const resultData = data
-  weather.querySelector('.weather-img').src = resultData.current.weather_icons[0]
-  weather.querySelector('.grad').textContent = `${resultData.current.temperature} °C`
-  weather.querySelector('.location').textContent = `${resultData.location.name}, ${resultData.location.country}`
-  weather.querySelector('.time').textContent = `Time: ${resultData.current.observation_time}`
-  weather.querySelector('.like').textContent = `Like: ${resultData.current.feelslike}`
-  weather.querySelector('.state').textContent = resultData.current.weather_descriptions[0]
-  weather.querySelector('.wind').textContent = `Wind: ${resultData.current.wind_dir}`
-  weather.querySelector('.speed').textContent = `Speed: ${resultData.current.wind_speed}`
-  weather.querySelector('.pressure').textContent = `Pressure: ${resultData.current.pressure}`
+  const temperature = data.current.temperature
+  const weather_icon = data..current.weather_icons[0]
+  const city = data.location.name
+  const country = data.location.country
+  const time = data.current.observation_time
+  const feeling = data.current.feeling
+  const weather_descriptions = data.current.weather_descriptions[0]
+  const wind_speed = data.current.wind_speed
+  const pressure = data.current.pressure
+
+  weather.querySelector('.weather-img').src = weather_icon
+  weather.querySelector('.grad').textContent = `${temperature} °C`
+  weather.querySelector('.location').textContent = `${city}, ${country}`
+  weather.querySelector('.time').textContent = `Time: ${time}`
+  weather.querySelector('.like').textContent = `Like: ${feeling}`
+  weather.querySelector('.state').textContent = weather_descriptions
+  weather.querySelector('.wind').textContent = `Wind: ${wind_dir}`
+  weather.querySelector('.speed').textContent = `Speed: ${wind_speed}`
+  weather.querySelector('.pressure').textContent = `Pressure: ${pressure}`
   container[0].append(weather)
 }
 
