@@ -17,7 +17,7 @@
     },
     "plugins": [
         "react",
-        "babel-eslint"
+        "babel"
     ],
     "rules": {
         "semi": ["error", "never"],
