@@ -136,4 +136,3 @@ dll.delete('one').delete('three')
 dll.traverse() // two -> ten -> four
 dll.isExist('ten') // true
 dll.isExist('one') // false
-
