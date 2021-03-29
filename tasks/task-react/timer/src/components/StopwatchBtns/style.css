@@ -1,0 +1,26 @@
+.stopwatch-element__btn-container {
+  display: flex;
+  flex-direction: row;
+}
+.stopwatch-element__btn-container >:not(:last-child) {
+  margin-right: 26px;
+}
+
+.btn {
+  min-width: 256px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  color: black;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 15px 12px;
+  background-color: #9dc4e3;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
