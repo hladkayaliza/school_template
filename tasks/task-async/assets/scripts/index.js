@@ -27,6 +27,8 @@ const getWeatherData = async function (city, country) {
     const checkedResponse = checkStatus(response)
     if (checkedResponse) {
       return parseJson(checkedResponse)
+    } else {
+       return null
     }
   } catch (error) {
       console.log(error)
