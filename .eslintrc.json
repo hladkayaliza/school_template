@@ -20,6 +20,12 @@
     ],
     "rules": {
         "semi": ["error", "never"],
-        "func-names": ["off"]
+        "func-names": ["off"],
+        "max-classes-per-file": ["error", 2],
+        "import/prefer-default-export": "off",
+        "import/no-unresolved": [
+            2,
+            { "caseSensitive": false }
+        ]
     }
 }
