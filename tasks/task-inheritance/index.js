@@ -1,7 +1,7 @@
 const IntBuilder = require('./IntBuilder')
 const StringBuilder = require('./StringBuilder')
 
-console.log(IntBuilder.random(10, 100))
+IntBuilder.random(10, 100)
 const intBuilder = new IntBuilder(10)
 intBuilder
   .plus(2, 3, 2)

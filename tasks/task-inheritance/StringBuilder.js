@@ -1,7 +1,6 @@
 const Builder = require('./Builder')
 
 class StringBuilder extends Builder {
-
   minus(n) {
     this.value = this.value.slice(0, -n)
     return this
