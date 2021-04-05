@@ -11,7 +11,7 @@ export function ConverterInput(props) {
     onChangeCurrency,
     onChangeAmount,
     amount,
-  }=props
+  } = props
   return (
     <div className="inputs">
       <div className="input-item">
