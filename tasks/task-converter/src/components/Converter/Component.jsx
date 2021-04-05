@@ -15,7 +15,8 @@ export function Converter() {
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
   const [currentDate, setCurrentDate] = useState('')
 
-  let toAmount, fromAmount
+  let toAmount
+  let fromAmount
   if (amountInFromCurrency) {
     fromAmount = amount
     toAmount = fromAmount * exchangeRate
