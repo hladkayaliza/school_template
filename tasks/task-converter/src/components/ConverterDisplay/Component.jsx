@@ -1,7 +1,7 @@
 import './style.css'
 
 export function ConverterDisplay(props) {
-  const {currentDate, toAmount, toCurrency, fromAmount, fromCurrency} = props
+  const { currentDate, toAmount, toCurrency, fromAmount, fromCurrency } = props
 
   return (
     <>

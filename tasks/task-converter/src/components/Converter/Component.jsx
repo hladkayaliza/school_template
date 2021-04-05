@@ -6,7 +6,7 @@ import { ConverterInput } from '../ConverterInput/Component'
 const URL = 'http://data.fixer.io/api/latest'
 const URL_KEY = '3678b28c602e81de78157890190760b8'
 
-export function Converter(props) {
+export function Converter() {
   const [currencyValues, setCurrencyValues] = useState([])
   const [fromCurrency, setFromCurrency] = useState('')
   const [toCurrency, setToCurrency] = useState('')
@@ -15,8 +15,7 @@ export function Converter(props) {
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
   const [currentDate, setCurrentDate] = useState('')
 
-  let toAmount,
-      fromAmount
+  let toAmount, fromAmount
   if (amountInFromCurrency) {
     fromAmount = amount
     toAmount = fromAmount * exchangeRate
@@ -25,8 +24,8 @@ export function Converter(props) {
     fromAmount = amount / exchangeRate
   }
 
-  useEffect((props) => {
-    const { startCurrency } = props
+  useEffect(() => {
+    const { startCurrency } = this.props
     fetch(`${URL}?access_key=${URL_KEY}`)
       .then((res) => res.json())
         .then((data) => {
