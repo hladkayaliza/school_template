@@ -22,6 +22,7 @@
         "semi": ["error", "never"],
         "func-names": ["off"],
         "import/prefer-default-export": ["off"],
-        "import/no-unresolved": ["off"]
+        "import/no-unresolved": ["off"],
+        "eslint one-var": [2, { "var": "never", "let": "never" }]
     }
 }
