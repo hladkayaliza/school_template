@@ -1,5 +1,4 @@
-import { Select } from 'antd'
-import { Input } from 'antd';
+import { Select, Input } from 'antd'
 import 'antd/dist/antd.css'
 import './style.css'
 

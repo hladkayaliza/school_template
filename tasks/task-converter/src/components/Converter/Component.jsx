@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css'
 import { ConverterDisplay } from '../ConverterDisplay/Component'
 import { ConverterInput } from '../ConverterInput/Component'
@@ -16,7 +15,6 @@ export function Converter(props) {
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
   const [currentDate, setCurrentDate] = useState('')
   const { startCurrency } = props
-
 
   let toAmount
   let fromAmount
@@ -57,6 +55,7 @@ export function Converter(props) {
     setAmount(e.target.value)
     setAmountInFromCurrency(true)
   }
+
   function handleChangeToAmount(e) {
     setAmount(e.target.value)
     setAmountInFromCurrency(false)
@@ -90,5 +89,5 @@ export function Converter(props) {
         />
       </div>
     </div>
-    )
-  }
+  )
+}

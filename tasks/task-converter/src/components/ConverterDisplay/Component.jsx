@@ -7,16 +7,21 @@ export function ConverterDisplay(props) {
     toAmount,
     toCurrency,
     fromAmount,
-    fromCurrency
+    fromCurrency,
   } = props
 
   return (
     <>
       <div className="date">
-        Today {currentDate}
+        Today
+        {currentDate}
       </div>
       <div className="currency">
-        {fromAmount} {fromCurrency} equal {toAmount} {toCurrency}
+        {fromAmount}
+        {fromCurrency}
+        equal
+        {toAmount}
+        {toCurrency}
       </div>
     </>
   )

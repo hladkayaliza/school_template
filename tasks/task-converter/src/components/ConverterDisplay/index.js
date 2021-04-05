@@ -1,1 +1,1 @@
-export { Display } from './Component'
+export { ConverterDisplay } from './Component'
