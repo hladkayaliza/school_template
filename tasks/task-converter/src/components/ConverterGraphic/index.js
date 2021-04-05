@@ -1,1 +1,1 @@
-export { Graphic } from './Component'
+export { ConverterGraphic } from './Component'
