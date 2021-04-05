@@ -9,12 +9,12 @@ const URL_KEY = '3678b28c602e81de78157890190760b8'
 
 export function Converter(props) {
   Converter.propTypes = {
-    startCurrency: PropTypes.string,
-    currentDate: PropTypes.string,
-    toAmount: PropTypes.number,
-    toCurrency: PropTypes.string,
-    fromAmount: PropTypes.number,
-    fromCurrency: PropTypes.string,
+    startCurrency: PropTypes.string.isRequired,
+    currentDate: PropTypes.string.isRequired,
+    toAmount: PropTypes.number.isRequired,
+    toCurrency: PropTypes.string.isRequired,
+    fromAmount: PropTypes.number.isRequired,
+    fromCurrency: PropTypes.string.isRequired,
   }
   const [currencyValues, setCurrencyValues] = useState([])
   const [fromCurrency, setFromCurrency] = useState('')
