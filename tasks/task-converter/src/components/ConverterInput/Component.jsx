@@ -1,9 +1,17 @@
 import { Select, Input } from 'antd'
 import React from 'react'
+import PropTypes from 'prop-types'
 import 'antd/dist/antd.css'
 import './style.css'
 
 export function ConverterInput(props) {
+  ConverterInput.propTypes = {
+    currencyValues: PropTypes.number,
+    selectedCurrency: PropTypes.string,
+    onChangeCurrency: PropTypes.func,
+    onChangeAmount: PropTypes.func,
+    amount: PropTypes.number,
+  }
   const { Option } = Select
   const {
     currencyValues,

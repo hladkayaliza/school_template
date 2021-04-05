@@ -1,9 +1,8 @@
 import './style.css'
 import React from 'react'
 
-export function ConverterGraphic(props) {
-
+export function ConverterGraphic() {
   return (
-    <div>HELLO</div>
+    <div>Graphic will be here</div>
   )
 }

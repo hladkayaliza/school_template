@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import './style.css'
 import { ConverterDisplay } from '../ConverterDisplay/Component'
 import { ConverterInput } from '../ConverterInput/Component'
@@ -7,6 +8,14 @@ const URL = 'http://data.fixer.io/api/latest'
 const URL_KEY = '3678b28c602e81de78157890190760b8'
 
 export function Converter(props) {
+  Converter.propTypes = {
+    startCurrency: PropTypes.string,
+    currentDate: PropTypes.string,
+    toAmount: PropTypes.number,
+    toCurrency: PropTypes.string,
+    fromAmount: PropTypes.number,
+    fromCurrency: PropTypes.string,
+  }
   const [currencyValues, setCurrencyValues] = useState([])
   const [fromCurrency, setFromCurrency] = useState('')
   const [toCurrency, setToCurrency] = useState('')
