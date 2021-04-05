@@ -1,11 +1,9 @@
-import { React, useState }  from 'react'
 import { Select } from 'antd'
 import { Input } from 'antd';
 import 'antd/dist/antd.css'
 import './style.css'
 
 export function ConverterInput(props) {
-
   const { Option } = Select
   const { currencyValues,
           selectedCurrency,
@@ -13,7 +11,6 @@ export function ConverterInput(props) {
           onChangeAmount,
           amount,
           } = props
-
   return (
     <div className = "inputs">
       <div className = "input-item">
