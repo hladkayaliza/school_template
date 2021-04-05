@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import React from 'react'
 import './style.css'
 import { ConverterDisplay } from '../ConverterDisplay/Component'
 import { ConverterInput } from '../ConverterInput/Component'
@@ -6,7 +7,7 @@ import { ConverterInput } from '../ConverterInput/Component'
 const URL = 'http://data.fixer.io/api/latest'
 const URL_KEY = '3678b28c602e81de78157890190760b8'
 
-export function Converter() {
+export function Converter(props) {
   const [currencyValues, setCurrencyValues] = useState([])
   const [fromCurrency, setFromCurrency] = useState('')
   const [toCurrency, setToCurrency] = useState('')
@@ -14,6 +15,8 @@ export function Converter() {
   const [amount, setAmount] = useState(1)
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
   const [currentDate, setCurrentDate] = useState('')
+  const { startCurrency } = props
+
 
   let toAmount
   let fromAmount
@@ -26,28 +29,27 @@ export function Converter() {
   }
 
   useEffect(() => {
-    const { startCurrency } = this.props
     fetch(`${URL}?access_key=${URL_KEY}`)
       .then((res) => res.json())
-        .then((data) => {
-          if (startCurrency) {
-            setFromCurrency(startCurrency)
-          } else {
-            setFromCurrency(data.base)
-          }
-          const firstCurrency = Object.keys(data.rates)[0]
-          setCurrencyValues([data.base, ...Object.keys(data.rates)])
-          setToCurrency(firstCurrency)
-          setExchangeRate(data.rates[firstCurrency])
-          setCurrentDate(data.date)
-        })
+      .then((data) => {
+        if (startCurrency) {
+          setFromCurrency(startCurrency)
+        } else {
+          setFromCurrency(data.base)
+        }
+        const firstCurrency = Object.keys(data.rates)[0]
+        setCurrencyValues([data.base, ...Object.keys(data.rates)])
+        setToCurrency(firstCurrency)
+        setExchangeRate(data.rates[firstCurrency])
+        setCurrentDate(data.date)
+      })
   }, [])
 
   useEffect(() => {
     if (fromCurrency !== '' && toCurrency !== '') {
       fetch(`${URL}?access_key=${URL_KEY}&cbase=${fromCurrency}&symbol=${toCurrency}`)
         .then((res) => res.json())
-        .then((data) => {setExchangeRate(data.rates[toCurrency])} )
+        .then((data) => setExchangeRate(data.rates[toCurrency]))
     }
   }, [fromCurrency, toCurrency])
 
@@ -82,7 +84,7 @@ export function Converter() {
         <ConverterInput
           currencyValues={currencyValues}
           selectedCurrency={toCurrency}
-          onChangeCurrency={value =>  setToCurrency(value)}
+          onChangeCurrency={(value) => setToCurrency(value)}
           amount={toAmount}
           onChangeAmount={handleChangeToAmount}
         />
