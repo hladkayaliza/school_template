@@ -6,7 +6,7 @@ export function ConverterRoot() {
   return (
     <Switch>
       <Route path="/widget" exact render={() => <Converter />} />
-      <Route path="/widget/:currency" render={ ({match}) => <Converter startCurrency={match.params.currency} /> } />
+      <Route path="/widget/:currency" render={({ match }) => <Converter startCurrency={match.params.currency} />} />
     </Switch>
   )
 }

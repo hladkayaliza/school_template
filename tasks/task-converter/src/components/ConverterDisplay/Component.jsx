@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 
 export function ConverterDisplay(props) {
   ConverterDisplay.propTypes = {
-    currentDate: PropTypes.string,
-    toAmount: PropTypes.number,
-    toCurrency: PropTypes.string,
-    fromAmount: PropTypes.number,
-    fromCurrency: PropTypes.string,
+    currentDate: PropTypes.string.isRequired,
+    toAmount: PropTypes.number.isRequired,
+    toCurrency: PropTypes.string.isRequired,
+    fromAmount: PropTypes.number.isRequired,
+    fromCurrency: PropTypes.string.isRequired,
   }
 
   const {

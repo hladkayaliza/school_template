@@ -6,11 +6,11 @@ import './style.css'
 
 export function ConverterInput(props) {
   ConverterInput.propTypes = {
-    currencyValues: PropTypes.number,
-    selectedCurrency: PropTypes.string,
-    onChangeCurrency: PropTypes.func,
-    onChangeAmount: PropTypes.func,
-    amount: PropTypes.number,
+    currencyValues: PropTypes.number.isRequired,
+    selectedCurrency: PropTypes.string.isRequired,
+    onChangeCurrency: PropTypes.func.isRequired,
+    onChangeAmount: PropTypes.func.isRequired,
+    amount: PropTypes.number.isRequired,
   }
   const { Option } = Select
   const {
