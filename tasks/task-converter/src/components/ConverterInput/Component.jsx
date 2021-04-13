@@ -6,7 +6,7 @@ import './style.css'
 
 export function ConverterInput(props) {
   ConverterInput.propTypes = {
-    currencyValues: PropTypes.number.isRequired,
+    currencyValues: PropTypes.array.isRequired,
     selectedCurrency: PropTypes.string.isRequired,
     onChangeCurrency: PropTypes.func.isRequired,
     onChangeAmount: PropTypes.func.isRequired,

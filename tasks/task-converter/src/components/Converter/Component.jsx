@@ -25,6 +25,7 @@ export function Converter(props) {
   const [currentDate, setCurrentDate] = useState('')
   const { startCurrency } = props
 
+
   let toAmount
   let fromAmount
   if (amountInFromCurrency) {
@@ -53,10 +54,22 @@ export function Converter(props) {
   }, [])
 
   useEffect(() => {
+
     if (fromCurrency !== '' && toCurrency !== '') {
       fetch(`${URL}?access_key=${URL_KEY}&cbase=${fromCurrency}&symbol=${toCurrency}`)
         .then((res) => res.json())
-        .then((data) => setExchangeRate(data.rates[toCurrency]))
+        .then((data) => {
+          if(fromCurrency === 'EUR') {
+            setExchangeRate(data.rates[toCurrency])
+          } else {
+            let rateFrom = 1/data.rates[fromCurrency]  //сколько евро будет 1 выбранная валюта
+            let rateIn = 1/data.rates[toCurrency]
+            let rate = rateFrom/rateIn
+            setExchangeRate(rate)
+
+          }
+
+        })
     }
   }, [fromCurrency, toCurrency])
 
