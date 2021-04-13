@@ -1,0 +1,8 @@
+.converter__container {
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+}
+.container-item {
+  margin-bottom: 32px;
+}

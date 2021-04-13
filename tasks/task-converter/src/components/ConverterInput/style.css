@@ -1,0 +1,20 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.value-item {
+  max-width: 230px;
+}
+
+.select-item {
+  width: 120px;
+}
