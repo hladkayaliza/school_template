@@ -16,10 +16,17 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "babel"
     ],
     "rules": {
         "semi": ["error", "never"],
+        "prefer-destructuring": ["error", {
+            "array": true,
+            "object": true
+        }, {
+            "enforceForRenamedProperties": false
+        }],
         "func-names": ["off"]
     }
 }
